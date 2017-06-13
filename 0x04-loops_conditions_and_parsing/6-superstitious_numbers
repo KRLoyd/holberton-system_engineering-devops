@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Script that prints the following lines based on iterations:
+# 4th: "bad luck from China"
+# 9th: "bad luck from Japan"
+# 17th: "bad luck from Italy"
+# all others: "Holberton School"
+COUNTER=0
+while [ $COUNTER -lt 20 ]; do
+    case $COUNTER in
+	3)
+	    echo "bad luck from China";;
+	7)
+	    echo "bad luck from Japan";;
+	16)
+	    echo "bad luck from Italy";;
+	*)
+	    echo "Holberton School";;
+    esac
+    let COUNTER+=1
+done
