@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script to display a list of currently running processes.
 # Note: shows all processes, a user-oriented format, and process heirarchy
-ps -exu -H
+ps axuf
