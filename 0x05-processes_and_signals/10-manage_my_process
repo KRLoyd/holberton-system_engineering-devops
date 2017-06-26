@@ -3,12 +3,12 @@
 
 PIDFILE=/var/run/my_process.pid
 MMP=manage_my_process
-PIDS=$(pgrep MMP)
+#PIDS=$(pgrep MMP)
 
 case "$1" in
      start)
 	./$MMP &
-	echo "$!" > $PIDFILE
+#	echo "$!" > $PIDFILE
 	echo "$MMP started"
 	;;
      stop)
@@ -20,7 +20,7 @@ case "$1" in
 	pkill -f $MMP &
 	rm -f $PIDFILE
 	./$MMP &
-	echo "$!" > $PIDFILE
+#	echo "$!" > $PIDFILE
 	echo "$MMP restarted"
 	;;
      *)

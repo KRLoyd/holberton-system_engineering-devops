@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Bash script that indefinitely writes a string to a file
 FILE=/tmp/my_process
+PIDFILE=/var/run/my_process.pid
+echo "$$" > $PIDFILE
 while :
 do
     echo I am alive! >> $FILE
