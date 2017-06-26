@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#Init script for manage_my_process
+
+PIDFILE=/var/run/my_process.pid
+MMP=manage_my_process
+PIDS=$(pgrep MMP)
+
+case "$1" in
+     start)
+	./$MMP &
+	echo "$!" > $PIDFILE
+	echo "$MMP started"
+	;;
+     stop)
+	pkill -f $MMP &
+	rm -f $PIDFILE
+	echo "$MMP stopped"
+	;;
+     restart)
+	pkill -f $MMP &
+	rm -f $PIDFILE
+	./$MMP &
+	echo "$!" > $PIDFILE
+	echo "$MMP restarted"
+	;;
+     *)
+	echo "Usage: $MMP {start|restart|stop}"
+	;;
+esac
