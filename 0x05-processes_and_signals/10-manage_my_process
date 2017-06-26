@@ -8,19 +8,17 @@ MMP=manage_my_process
 case "$1" in
      start)
 	./$MMP &
-#	echo "$!" > $PIDFILE
 	echo "$MMP started"
 	;;
      stop)
-	pkill -f $MMP &
+	kill $(cat $PIDFILE)
 	rm -f $PIDFILE
 	echo "$MMP stopped"
 	;;
      restart)
-	pkill -f $MMP &
+	kill $(cat $PIDFILE)
 	rm -f $PIDFILE
 	./$MMP &
-#	echo "$!" > $PIDFILE
 	echo "$MMP restarted"
 	;;
      *)
