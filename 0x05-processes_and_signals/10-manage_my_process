@@ -11,12 +11,12 @@ case "$1" in
 	echo "$MMP started"
 	;;
      stop)
-	kill $(cat $PIDFILE)
+	kill "$(cat $PIDFILE)"
 	rm -f $PIDFILE
 	echo "$MMP stopped"
 	;;
      restart)
-	kill $(cat $PIDFILE)
+	kill "$(cat $PIDFILE)"
 	rm -f $PIDFILE
 	./$MMP &
 	echo "$MMP restarted"
