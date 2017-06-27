@@ -1,7 +1,7 @@
 # holberton-system_engineering-devops
 
 ## Purpose
-This directory holds the projects for Holberton School's Systems engineering & DevOps section. 
+This directory holds the projects for Holberton School's Systems engineering & DevOps section.
 
 ### Projects
 
