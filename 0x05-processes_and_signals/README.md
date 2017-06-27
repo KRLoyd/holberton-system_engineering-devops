@@ -20,7 +20,7 @@ All C code is written in Betty style. Information about this style can be found 
 
 All Bash scripts pass `Shellcheck` (version 0.3.3).
 
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
@@ -52,7 +52,7 @@ All files must be executable to run. To add executable permissions to any file: 
 [8-beheaded_process](8-beheaded_process) : Bash script to kill the process `7-highlander`
 
 [9-process_and_pid_file](9-process_and_pid_file) : Bash script that does many things!
-* Notes: 
+* Notes:
     * Saves its PID in file `/var/run/holbertonscript.pid`
     * Displays `To infinity and beyond` indefinitely
     * Traps `SIGTERM` signals
@@ -73,7 +73,7 @@ All files must be executable to run. To add executable permissions to any file: 
     * When passed nothing or something that was not listed above: displays `Usage: manage_my_process {start|stop|restart}`
 * [manage_my_process](manage_my_process) : Bash script to write `I am alive!` to file `/tmp/my_process`.
 
-[11-zombie.c](11-zombie.c) : C program that creates 5 zombie processes. 
+[11-zombie.c](11-zombie.c) : C program that creates 5 zombie processes.
 * Notes:
     * For every zobie process created, displays `Zombie process created, PID: <ZOMBIE_PID>`
     * To see a list of the zombies created, open a new Terminal window and run `ps aux | grep -e 'Z+.*<defunct>'`
