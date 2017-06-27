@@ -1,4 +1,8 @@
-#include "zombie.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int infinite_while(void);
 /**
  * main - function to create 5 zombie processes
  *
@@ -6,26 +10,15 @@
  */
 int main(void)
 {
-	pid_t pid, child_pid;
-	/* pid_t parent_pid; */
+	pid_t pid;
 	unsigned int i;
-
-	pid = 1;
 
 	for (i = 0; i < 5; i++)
 	{
-		if (pid > 0)
-		{
-			pid = fork();
-		}
-	}
-	if (pid == 0)
-	{
-		/* parent_pid = getppid(); */
-		/* printf("Parten PID: %d\n", parent_pid); */
-		child_pid = getpid();
-		printf("Zombie process created, PID: %d\n", child_pid);
-		
+		pid = fork();
+		if (pid == 0)
+			exit(0);
+		printf("Zombie process created, PID: %d\n", pid);
 	}
 	infinite_while();
 	return (0);
