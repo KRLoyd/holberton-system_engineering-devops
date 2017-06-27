@@ -6,7 +6,8 @@
  */
 int main(void)
 {
-	pid_t pid, child_pid, parent_pid;
+	pid_t pid, child_pid;
+	/* pid_t parent_pid; */
 	unsigned int i;
 
 	pid = 1;
@@ -14,14 +15,17 @@ int main(void)
 	for (i = 0; i < 5; i++)
 	{
 		if (pid > 0)
-			pid = fork();
-		if (pid == 0)
 		{
-			parent_pid = getppid();
-			printf("Parten PID: %d\n", parent_pid);
-			child_pid = getpid();
-			printf("Zombie process created, PID: %d\n", child_pid);
+			pid = fork();
 		}
+	}
+	if (pid == 0)
+	{
+		/* parent_pid = getppid(); */
+		/* printf("Parten PID: %d\n", parent_pid); */
+		child_pid = getpid();
+		printf("Zombie process created, PID: %d\n", child_pid);
+		
 	}
 	infinite_while();
 	return (0);
