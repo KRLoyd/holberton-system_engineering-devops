@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fix docker container holbertonschool/265-0 to return "Hello Holberton"
+echo Hello Holberton > 0
+service apache2 start
