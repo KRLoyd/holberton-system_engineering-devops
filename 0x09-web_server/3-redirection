@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script to configure a new Ubuntu machine.
+NEW_REDIRECT="location = /redirect_me {\n\treturn 301 /new_redirect_me;\n}"
+apt-get -y install nginx;
+echo "Holberton School" > /usr/share/nginx/html/index.html;
+echo "here's the new page!" > /new_redirect_me;
+sed "$NEW_REDIRECT" >> /etc/nginx/sites-enabled/default;
