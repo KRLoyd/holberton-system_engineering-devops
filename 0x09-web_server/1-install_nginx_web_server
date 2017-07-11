@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to configure a new Ubuntu machine.
+apt-get -y install nginx;
+echo "Holberton School" > /usr/share/nginx/html/index.html;
