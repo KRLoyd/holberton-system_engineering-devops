@@ -2,6 +2,7 @@
 # Script to configure a new Ubuntu machine.
 apt-get update
 apt-get -y install nginx
+service nginx start
 echo "Holberton School" | tee /usr/share/nginx/html/index.html
 TO_REPLACE="^server {$"
 REPLACE_WITH="server {\n\tlocation \/redirect\/_me {\n\t\trewrite ^\/redirect_me\/$ http:\/\/www.dragonvipercobra.com permanent;\n\t}\n"
