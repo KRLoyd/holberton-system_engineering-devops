@@ -2,6 +2,7 @@
 # Script to configure a new Ubuntu machine.
 apt-get update
 apt-get -y install nginx
+service nginx start
 TO_REPLACE="^server {$"
 REPLACE_WITH="server {\n\tlocation \/redirect\/_me {\n\t\trewrite ^\/redirect_me\/$ http:\/\/www.dragonvipercobra.com permanent;\n\t}\n"
 cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/.old_default
