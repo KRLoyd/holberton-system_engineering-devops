@@ -6,7 +6,7 @@ service nginx start
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 TO_REPLACE="^server {$"
 REPLACE_WITH="server {\n\tlocation \/redirect\/_me {\n\t\trewrite ^\/redirect_me\/$ http:\/\/www.dragonvipercobra.com permanent;\n\t}\n"
-cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/.old_default
-sed -i "s/$TO_REPLACE/$REPLACE_WITH/" /etc/nginx/sites-enabled/default
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/.old_default
+sed -i "s/$TO_REPLACE/$REPLACE_WITH/" /etc/nginx/sites-available/default
 service nginx reload
 service nginx restart
