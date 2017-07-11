@@ -2,5 +2,5 @@
 # Script to configure a new Ubuntu machine.
 apt-get update;
 apt-get -y install nginx;
-echo "Holberton School" > /usr/share/nginx/html/index.html;
+echo "Holberton School" | tee /usr/share/nginx/html/index.html;
 service nginx restart;
