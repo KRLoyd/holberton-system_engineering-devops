@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Script to configure a new Ubuntu machine.
-apt-get update
-apt-get -y install nginx
-service nginx start
-echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-TO_REPLACE="^server {$"
-REPLACE_WITH="server {\n\tlocation \/redirect\/_me {\n\t\trewrite ^\/redirect_me\/$ http:\/\/www.dragonvipercobra.com permanent;\n\t}\n"
-cp /etc/nginx/sites-available/default /etc/nginx/sites-available/.old_default
-sed -i "s/$TO_REPLACE/$REPLACE_WITH/" /etc/nginx/sites-available/default
-service nginx reload
-service nginx restart
+sudo apt-get update;
+sudo apt-get -y install nginx;
+sudo service nginx start;
+echo "Holberton School" | tee /usr/share/nginx/html/index.html;
+TO_REPLACE="^server {$";
+REPLACE_WITH="server {\n\tlocation \/redirect_me\/ {\n\t\trewrite ^\/redirect_me\/$ http:\/\/www.dragonvipercobra.com permanent;\n\t}\n";
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/.old_default;
+sudo sed -i "s/$TO_REPLACE/$REPLACE_WITH/" /etc/nginx/sites-available/default;
+sudo service nginx reload;
+sudo service nginx restart;
