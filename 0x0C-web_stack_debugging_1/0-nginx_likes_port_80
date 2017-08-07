@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # Script to debug container: make Nginx listen on 80
-# Start Nginx
-service nginx start;
 # Go to sites-enabled folder for Nginx
 cd /etc/nginx/sites-enabled/;
 # Delete the default file
