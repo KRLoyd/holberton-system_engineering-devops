@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script to configure a Ubuntu server
+# Make a copy of the etc/hosts file
+cp /etc/hosts ~/newhosts
+# Resolve localhost to 127.0.0.2
+sed -i '/localhost/c\127.0.0.2	localhost' ~/newhosts
+# Check if facebook.com is in etc/hosts
+if grep -q 'facebook.com' ~/newhosts
+then
+	# If exists, resolve to 8.8.8.8
+	sed -i '/facebook.com/c\8.8.8.8	facebook.com' ~/newhosts
+else
+	# If not, add and resolve to 8.8.8.8
+	echo "8.8.8.8 facebook.com" >> ~/newhosts
+fi
+cp -f ~/newhosts /etc/hosts
+rm -f ~/newhosts
