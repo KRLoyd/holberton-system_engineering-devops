@@ -5,6 +5,6 @@ cd /etc/nginx/sites-enabled/;
 # Delete the default file
 rm default;
 # Create symbolic link to the deafult file in sites-available
-ln /etc/nginx/sites-available/default default;
+ln -s /etc/nginx/sites-available/default default;
 # Restart Nginx
 service nginx restart;
