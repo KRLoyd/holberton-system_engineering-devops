@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Script to configure a new Ubuntu machine.
+sudo add-apt-repository -y ppa:vbernat/haproxy-1.5
+sudo apt-get -y update;
+sudo apt-get -y dist-upgrade;
+sudo apt-get -y install haproxy;
+# sudo apt-get -y install nginx;
+# sudo service nginx start;
+
+sudo service haproxy start;
+TO_APPEND="\\\nlisten appname 0.0.0.0:80\n\tmode http\n\tstats enable\n\tstats uri \/haproxy?stats\n\tstats realm Strictly\ Private\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver web-01 66.70.184.251:80 check\n\tserver web-02 184.73.23.115:80 check\n";
+
+sudo sed -i "\$a$TO_APPEND" /etc/haproxy/haproxy.cfg;
+
+TO_REPLACE="^ENABLED=0$"
+REPLACE_WITH="ENABLED=1"
+sudo sed -i "s/$TO_REPLACE/$REPLACE_WITH/" /etc/default/haproxy
+
+sudo service haproxy restart;
