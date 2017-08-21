@@ -1,7 +1,7 @@
 # 0x0B. Networking basics #1
 
 ## Description
-The following files include answer files and Bash scripts that configure Ubuntu servers. 
+The following files include answer files and Bash scripts that configure Ubuntu servers.
 
 ### Project Notes
 #### Environment
@@ -9,7 +9,7 @@ These functions have been tested on Ubuntu 14.04.5 LTS.
 Tests and development are done in VirtualBox on Ubuntu via Vagrant(1.8.1).
 #### Style
 All Bash scripts are checked with Shellcheck, version 0.3.3
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
