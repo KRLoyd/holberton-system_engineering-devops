@@ -1,13 +1,13 @@
 # 0x07. Networking basics #0
 
 ## Description
-The files in this folder are answer file to questions about the OSI model and it's various layers, as well as some Bash scripts. 
+The files in this folder are answer file to questions about the OSI model and it's various layers, as well as some Bash scripts.
 
 ### Project Notes
 #### Environment
 These functions have been tested on Ubuntu 14.04.5 LTS.
 Tests and development are done in VirtualBox on Ubuntu via Vagrant(1.8.1).
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
