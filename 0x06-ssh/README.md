@@ -1,13 +1,13 @@
 # 0x06. SSH
 
 ## Description
-Tasks in this folder include the following: connecting to a server with `ssh`, creating a key pair, and manipulating an SSH congiguration file. 
+Tasks in this folder include the following: connecting to a server with `ssh`, creating a key pair, and manipulating an SSH congiguration file.
 
 ### Project Notes
 #### Environment
 These files have been tested on Ubuntu 14.04.5 LTS.
 Tests and development are done in VirtualBox on Ubuntu via Vagrant(1.8.1).
- 
+
 ## Files
 All files must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
