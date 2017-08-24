@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2086
-# Comment
+# Bash script to display info about subdomains
 
 # Create func
 func () {
