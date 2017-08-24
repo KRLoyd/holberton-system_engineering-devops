@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2086
+# Comment
+
+# Create func
+func () {
+    SUB="$1"
+    DOMAIN="$2"
+
+    dig_result=($(dig $SUB.$DOMAIN | awk '/ANSWER SECTION:/{getline; print}'))
+    echo "The subdomain $SUB is a ${dig_result[3]} record and points to ${dig_result[4]}"
+    return 0
+}
+
+# Set parameters passed as variables
+DOMAIN="$1"
+SUB="$2"
+
+# Call func depending on args passed
+if [ ! "$SUB" ];
+then
+    func "www" "$DOMAIN"
+    func "lb-01" "$DOMAIN"
+    func "web-01" "$DOMAIN"
+    func "web-02" "$DOMAIN"
+else
+    func "$SUB" "$DOMAIN"
+fi
