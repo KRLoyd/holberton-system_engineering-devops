@@ -7,14 +7,6 @@ wget https://raw.githubusercontent.com/KRLoyd/holberton-system_engineering-devop
 
 wget https://raw.githubusercontent.com/KRLoyd/holberton-system_engineering-devops/master/0x13-web_stack_debugging_2/sites_enabled_default -O /etc/nginx/sites-available/default
 
-# Change ownership of nginx dirs (recursively)
-sudo chown -R nginx: /etc/nginx
-sudo chown -R nginx: /var/log/nginx
-
-# Make files executable for nginx user
-chmod u+x /etc/nginx/nginx.conf
-chmod u+x /etc/nginx/sites-available/default
-
 # Enable password-free sudo access to user nginx
 echo "nginx ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nginx
 
