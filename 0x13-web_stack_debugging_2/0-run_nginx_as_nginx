@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Bash script to configure the container to have nginx run as nginx and listening on port 8080
 
+# Kill all apache2 processes
+pkill apache2
+
+# Stop nginx 
+sudo service nginx stop
+
 # Get updated nginx.conf and sites_available_default from my repo
 # Save to appropriate files
 wget https://raw.githubusercontent.com/KRLoyd/holberton-system_engineering-devops/master/0x13-web_stack_debugging_2/nginx.conf -O /etc/nginx/nginx.conf
@@ -10,8 +16,6 @@ wget https://raw.githubusercontent.com/KRLoyd/holberton-system_engineering-devop
 # Enable password-free sudo access to user nginx
 echo "nginx ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nginx
 
-# Kill all apache2 processes
-pkill apache2
 
 # Reload and Restart nginx
 sudo service nginx reload
