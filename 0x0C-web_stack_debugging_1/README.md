@@ -1,8 +1,8 @@
 # 0x0C. Web stack debugging #1
 
 ## Description
-Holberton's second assigned debugging task. 
-* Problem: The Ngninx installation on the provided Ubuntu container is not listening on port 80. 
+Holberton's second assigned debugging task.
+* Problem: The Ngninx installation on the provided Ubuntu container is not listening on port 80.
 * Solution: Provided in file [0-nginx_likes_port_80](0-nginx_likes_port_80)
 
 ### Project Notes
