@@ -11,7 +11,7 @@ Tests and development are done in VirtualBox on Ubuntu via Vagrant(1.8.1).
 #### Style
 `Shellchecker` was used to check all Bash scripts.
 
- 
+
 ## Files
 All Bash scripts must be executable to run. To add executable permissions to any file: `chmod u+x file_name`
 
