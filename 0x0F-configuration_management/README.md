@@ -1,7 +1,7 @@
-# 0x0F. COnfiguration management
+# 0x0F. Configuration management
 
 ## Description
-
+A project to introduce Puppet! Tasks include automating file creation, installation of a program, and to kill processes.
 
 
 ### Project Notes
