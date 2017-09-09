@@ -1,8 +1,13 @@
+# Rewrite request_uri for airbnb-dynamic for number_odd_or_even
+if ($request_uri ~ ^/airbnb-dynamic/[\d+]) {
+   rewrite ^/airbnb-dynamic/(.*) /airbnb-dynamic/number_odd_or_even/$1 break;
+}
+
 # route /airbnb-dynamic/
 location /airbnb-dynamic/ {
 	 include proxy_params;
 	 # Rewrite URL so it can be served
-	 rewrite ^/airbnb-dynamic(.*) /number_odd_or_even$1 break;
-	# Forward requests
-	proxy_pass http://127.0.0.1:8002;
-       }
+	 rewrite ^/airbnb-dynamic(.*) /$1 break;
+	 # Forward requests
+	 proxy_pass http://127.0.0.1:8002;
+}
