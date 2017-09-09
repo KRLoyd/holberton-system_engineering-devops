@@ -1,15 +1,10 @@
 # Configuration for airbnb-onepage
-server {
-       # Set up listening port and server
-       listen 80;
-       server_name 127.0.0.1;
+# route /airbnb-onepage
+location /airbnb-onepage {
+	 include proxy_params;
+   	 # Rewrite URL so it can be served, if needed
+	 rewrite ^/airbnb-onepage(.*) /$1 break;
 
-       # route /airbnb-onepage
-       location /airbnb-onepage {
-       		# Rewrite URL so it can be served, if needed
-		rewrite ^/airbnb-onepage(.*) /$1 break;
-
-		# Forward requests
-		proxy_pass http://127.0.0.1:8001;
+	 # Forward requests
+	 proxy_pass http://127.0.0.1:8001;
        }
-}
