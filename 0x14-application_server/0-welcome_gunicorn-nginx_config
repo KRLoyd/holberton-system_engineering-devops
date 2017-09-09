@@ -1,3 +1,4 @@
+# Configuration for airbnb-onepage
 server {
        # Set up listening port and server
        listen 80;
