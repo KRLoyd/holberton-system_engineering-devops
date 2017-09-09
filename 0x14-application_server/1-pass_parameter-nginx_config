@@ -1,12 +1,9 @@
-# Rewrite request_uri for airbnb-dynamic for number_odd_or_even
-if ($request_uri ~ ^/airbnb-dynamic/[\d+]) {
-   rewrite ^/airbnb-dynamic/(.*) /airbnb-dynamic/number_odd_or_even/$1 break;
-}
-
-# route /airbnb-dynamic/
+# route /airbnb-dynamic/ to be served by Gunicorn airbnb-parameter
 location /airbnb-dynamic/ {
 	 include proxy_params;
-	 # Rewrite URL so it can be served
+	 # Rewrite URL if it is /airbnb-dynamic/[0-9+]
+	 rewrite ^/airbnb-dynamic/([\d+]) /number_odd_or_even/$1 break;
+	 # Rewrite all other URLs
 	 rewrite ^/airbnb-dynamic(.*) /$1 break;
 	 # Forward requests
 	 proxy_pass http://127.0.0.1:8002;
