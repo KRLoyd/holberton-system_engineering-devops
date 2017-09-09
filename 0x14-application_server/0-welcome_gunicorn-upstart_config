@@ -1,0 +1,24 @@
+# Description of Upstart file
+description "Gunicorn application server running airbnb-onepage"
+
+# Define start and stop conditions
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+# Restart the process if it ever fails
+respawn
+
+# Set user and group
+setuid ubuntu
+setuid ubuntu
+
+script
+	# Move to the directory where the file is
+	cd  /home/ubuntu/AirBnB_clone_v2/web_flask
+	##
+	# Tell Gunicorn to do the following:
+	#      - bind to specific port
+	#      - pass the entry point of the app
+	##
+	exec gunicorn --bind 127.0.0.1:8001 0-hello_route:app
+end script
