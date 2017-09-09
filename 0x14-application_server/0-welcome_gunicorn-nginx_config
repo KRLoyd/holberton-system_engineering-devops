@@ -1,6 +1,6 @@
 # Configuration for airbnb-onepage
-# route /airbnb-onepage
-location /airbnb-onepage {
+# route /airbnb-onepage/
+location /airbnb-onepage/ {
 	 include proxy_params;
    	 # Rewrite URL so it can be served, if needed
 	 rewrite ^/airbnb-onepage(.*) /$1 break;
