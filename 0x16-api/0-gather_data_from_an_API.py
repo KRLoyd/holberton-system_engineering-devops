@@ -41,7 +41,7 @@ if __name__ == "__main__":
             completed_tasks.append(task.get('title'))
 
     # Print in correct format
-    print("Employee {} is done with tasks ({}/{}):".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         employee_name, completed_counter, total_tasks))
     for task in completed_tasks:
-        print("\t{}".format(task))
+        print("\t {}".format(task))
