@@ -4,8 +4,8 @@ Python script find todo list progress about a specific employee.
 """
 if __name__ == "__main__":
     # Import modules
-    import requests
     from sys import argv
+    import requests
 
     # Set variables
     employee_id = argv[1]
