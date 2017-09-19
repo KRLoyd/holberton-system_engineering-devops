@@ -17,17 +17,17 @@ if __name__ == "__main__":
     employee_response = requests.get(employee_url).json()
     todo_response = requests.get(todo_url).json()
 
-    full_todo = {} # Empty dictionary for all employees and todo lists
-    
-    with open(file_name, "w") as json_file: # Open file_name
-        for employee in employee_response: # Create indv employee todo list
+    full_todo = {}  # Empty dictionary for all employees and todo lists
+
+    with open(file_name, "w") as json_file:  # Open file_name
+        for employee in employee_response:  # Create indv employee todo list
             employee_tasks = []
-            for task in todo_response: # Create indv tasks
+            for task in todo_response:  # Create indv tasks
                 task_dict = {}
                 if task.get("userId") == employee.get("id"):
                     task_dict["username"] = employee.get("username")
                     task_dict["task"] = task.get("title")
                     task_dict["completed"] = task.get("completed")
                     employee_tasks.append(task_dict)
-            full_todo[employee.get("id")] = employee_tasks # Add employee todo
-        json.dump(full_todo, json_file) # Write all employee todo lists to file
+            full_todo[employee.get("id")] = employee_tasks  # Add employee todo
+        json.dump(full_todo, json_file)  # write to file
