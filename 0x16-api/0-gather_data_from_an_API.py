@@ -3,12 +3,13 @@
 Python script find todo list progress about a specific employee.
 """
 if __name__ == "__main__":
+
     # Import modules
-    from sys import argv
     import requests
+    import sys
 
     # Set variables
-    employee_id = argv[1]
+    employee_id = sys.argv[1]
     todo_url = "https://jsonplaceholder.typicode.com/todos"
     employee_url = "https://jsonplaceholder.typicode.com/users"
 
