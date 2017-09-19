@@ -7,10 +7,10 @@ File created: <employee_id>.json
 if __name__ == "__main__":
     # Import modules
     import requests
-    from sys import argv
+    import sys
 
     # Set variables
-    employee_id = argv[1]
+    employee_id = sys.argv[1]
     todo_url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
         employee_id)
     employee_url = "https://jsonplaceholder.typicode.com/users?id={}".format(
