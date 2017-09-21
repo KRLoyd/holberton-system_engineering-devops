@@ -5,6 +5,7 @@ Module for Task 0 of Holberton Project #314
 import requests
 import sys
 
+
 def number_of_subscribers(subreddit):
     """
     Queries the Reddit API for the number of subscribers for a subreddit.
