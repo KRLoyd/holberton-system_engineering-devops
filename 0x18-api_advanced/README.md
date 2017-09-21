@@ -27,12 +27,14 @@ Function that queries the Reddit API and prints the titles of the first 10 hot p
   * @subreddit: name of the subreddit to get information about
   * Returns: prints "None" if the subreddit is not valid, prints the top 10 hot posts if valid
 
-##### []()
+##### [2-recurse.py](2-recurse.py)
 Recursive function that queries the Reddit API and returns a list of titles of all hot articles for a given subreddit.
 * Prototype: `def recurse(subreddit, hot_list=[])`
   * @subreddit: name of the subreddit to get information about
   * Returns: `None` if the subreddit is not valid, a list of the hot posts if valid
 
+##### Folder [mains](mains)
+Folder to hold the main files provided by Holberton School to test my functions.
 
 ## Authors
 Kristen Loyd        [Github](https://github.com/KRLoyd) |  [LinkedIn](https://www.linkedin.com/in/kristen-loyd-34984a92)
