@@ -16,7 +16,7 @@ def top_ten(subreddit):
     import sys
 
     # Set vairables
-    request_url = 'https://www.reddit.com/r/{}/hot.json?'.format(subreddit)
+    request_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'user-agent': 'chrome:top_ten_function:v1 (by /u/remyjuke)'}
 
     response = requests.get(request_url,
