@@ -2,7 +2,8 @@
 """
 Module for Task 0 of Holberton Project #314
 """
-
+import requests
+import sys
 
 def number_of_subscribers(subreddit):
     """
@@ -11,10 +12,6 @@ def number_of_subscribers(subreddit):
     Subreddit is passed as an argument.
     If the subreddit is not valid, 0 is returned.
     """
-    # import json
-    import requests
-    import sys
-
     # set variables
     request_url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     headers = {'user-agent':
@@ -30,3 +27,7 @@ def number_of_subscribers(subreddit):
 
     subscriber_count = response.json().get("data").get("subscribers")
     return subscriber_count
+
+if __name__ == "__main__":
+    number_of_subscribers("all")
+    number_of_subscribers("fake_subreddit")
