@@ -2,6 +2,8 @@
 """
 Module for Task 1 of Holberton School Project 314
 """
+import requests
+import sys
 
 
 def top_ten(subreddit):
@@ -11,10 +13,6 @@ def top_ten(subreddit):
     Subreddit is provided as a parameter.
     If an invalid subreddit is supplied, "None" is printed
     """
-
-    import requests
-    import sys
-
     # Set vairables
     request_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'user-agent': 'chrome:top_ten_function:v1 (by /u/remyjuke)'}
@@ -32,3 +30,7 @@ def top_ten(subreddit):
 
     for i in range(0, 10):
         print(post_list[i].get("data").get("title"))
+
+if __name__ == "__main__":
+    top_ten("all")
+    top_ten("fake_subreddit_for_testing")
