@@ -40,3 +40,11 @@ This directory holds the projects for Holberton School's Systems Engineering & D
 [0x14-postmortem](0x14-postmortem)
 
 [0x15-web_stack_debugging_3](0x15-web_stack_debugging_3)
+
+[0x16-api](0x16-api)
+
+[0x17-web_stack_debugging_4](0x17-web_stack_debugging_4)
+
+[0x18-api_advanced](0x18-api_advanced)
+
+[0x1A-mysql](0x1A-mysql)
