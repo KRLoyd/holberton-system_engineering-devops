@@ -48,3 +48,5 @@ This directory holds the projects for Holberton School's Systems Engineering & D
 [0x18-api_advanced](0x18-api_advanced)
 
 [0x1A-mysql](0x1A-mysql)
+
+[0x1C-webstack_monitoring](0x1C-webstack_monitoring)
